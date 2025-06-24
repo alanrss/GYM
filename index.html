@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rutina Mensual - Motivación y Ejercicios</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    margin: 0 0 5px;
+  }
+  h2, h3 {
+    color: #264653;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #264653;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: #2a9d8f;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  nav button:hover, nav button.active {
+    background: #e76f51;
+  }
+  main {
+    max-width: 900px;
+    margin: 20px auto 60px;
+    padding: 0 15px;
+  }
+  section {
+    display: none;
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    border-left: 6px solid #2a9d8f;
+    border-radius: 5px;
+  }
+  section.active {
+    display: block;
+  }
+  ul {
+    line-height: 1.6;
+  }
+  .motivacion {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #e76f51;
+    font-size: 1.1rem;
+  }
+  .ejercicio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .ejercicio img {
+    max-width: 100px;
+    margin-left: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+  }
+  .temporizador {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .temporizador button {
+    margin: 0 8px;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2a9d8f;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .temporizador button:hover {
+    background: #e76f51;
+  }
+  #cuentaAtras {
+    font-size: 48px;
+    margin-top: 10px;
+    color: #264653;
+  }
+  footer {
+    background: #264653;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    .ejercicio {
+      flex-direction: column;
+      text-align: center;
+    }
+    .ejercicio img {
+      margin: 10px 0 0 0;
+      max-width: 80%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rutina Mensual - Alan 💪</h1>
+  <p>¡Cada día cuenta! Vamos con toda la energía 🔥</p>
+</header>
+
+<nav>
+  <button class="semana-btn active" onclick="mostrarSemana(1)">Semana 1</button>
+  <button class="semana-btn" onclick="mostrarSemana(2)">Semana 2</button>
+  <button class="semana-btn" onclick="mostrarSemana(3)">Semana 3</button>
+  <button class="semana-btn" onclick="mostrarSemana(4)">Semana 4</button>
+</nav>
+
+<main>
+  <!-- Semana 1 -->
+  <section class="semana active" id="semana1">
+    <h2>Semana 1</h2>
+    <p class="motivacion">"Disciplina es más fuerte que motivación."</p>
+
+    <article>
+      <h3>Día 1</h3>
+      <p class="motivacion">"Hoy toca crecer, Alan. ¡Vamos con todo!"</p>
+      <div class="ejercicio">
+        <div>
+          <ul>
+            <li>Press banca plano con barra – 4x10</li>
+            <li>Press inclinado con mancuernas – 3x12</li>
+            <li>Aperturas con mancuernas – 3x12</li>
+            <li>Fondos (paralelas o banca) – 3x12</li>
+            <li>Jalón de cuerda para tríceps – 3x15</li>
+            <li>Extensiones tríceps con mancuerna – 3x12</li>
+            <li>Crunch + Elevación de piernas + Plancha (3 rondas de 15-15-30 seg)</li>
+          </ul>
+        </div>
+        <img src="https://i.imgur.com/Qtpr5sN.png" alt="Press banca plano con barra" />
+      </div>
+    </article>
+
+    <article>
+      <h3>Día 2</h3>
+      <p class="motivacion">"Cada repetición te acerca a tu meta."</p>
+      <div class="ejercicio">
+        <div>
+          <ul>
+            <li>Jalón al pecho – 4x10</li>
+            <li>Remo con barra – 3x12</li>
+            <li>Remo en polea baja – 3x12</li>
+            <li>Pull-over con mancuerna – 3x15</li>
+            <li>Curl bíceps barra Z – 3x12</li>
+            <li>Curl alterno con mancuerna – 3x12</li>
+            <li>Martillo – 3x12</li>
+          </ul>
+        </div>
+        <img src="https://i.imgur.com/XT9V6Ar.png" alt="Remo con barra" />
+      </div>
+    </article>
+
+    <article>
+      <h3>Día 3</h3>
+      <p class="motivacion">"La fuerza nace de la constancia."</p>
+      <div class="ejercicio">
+        <div>
+          <ul>
+            <li>Sentadilla libre – 4x10</li>
+            <li>Prensa – 3x12</li>
+            <li>Peso muerto rumano – 3x12</li>
+            <li>Zancadas caminando – 3x20 pasos</li>
+            <li>Curl femoral acostado – 3x15</li>
+            <li>Extensión de cuádriceps – 3x15</li>
+            <li>Elevación de talones – 4x20 (gemelos)</li>
+          </ul>
+        </div>
+        <img src="https://i.imgur.com/gci9Ftk.png" alt="Sentadilla libre" />
+      </div>
+    </article>
+
+    <article>
+      <h3>Día 4</h3>
+      <p class="motivacion">"Un día más cerca del objetivo."</p>
+      <div class="ejercicio">
+        <div>
+          <ul>
+            <li>Press militar con barra – 4x10</li>
+            <li>Elevaciones laterales – 3x15</li>
+            <li>Pájaros (posterior) – 3x15</li>
+            <li>Remo al cuello – 3x12</li>
+            <li>Encogimientos con mancuernas – 4x15</li>
+            <li>Bicicleta + Crunch inverso + Plancha lateral (3 rondas)</li>
+          </ul>
+        </div>
+        <img src="https://i.imgur.com/6JZYvZT.png" alt="Press militar con barra" />
+      </div>
+    </article>
+
+    <article>
+      <h3>Día 5</h3>
+      <p class="motivacion">"¡Dale con todo en este full body!"</p>
+      <div class="ejercicio">
+        <div>
+          <ul>
+            <li>Circuito 3 rondas: 10 burpees, 20 sentadillas con salto, 15 flexiones, 10 dominadas (o asistidas), 20 mountain climbers</li>
+            <li>Sentadillas con peso – 3x12</li>
+            <li>Peso muerto con barra – 3x10</li>
+            <li>Press banca – 3x10</li>
+            <li>Remo – 3x12</li>
+          </ul>
+        </div>
+        <img src="https://i.imgur.com/eKk7JXN.png" alt="Burpees" />
+      </div>
+    </article>
+  </section>
+<!-- Semana 2 -->
+<section class="semana" id="semana2">
+  <h2>Semana 2</h2>
+  <p class="motivacion">"La intensidad crea resultados."</p>
+
+  <article>
+    <h3>Día 1</h3>
+    <p class="motivacion">"Siente el poder de cada repetición."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press banca inclinado con barra – 4x10</li>
+          <li>Press plano con mancuernas – 3x12</li>
+          <li>Peck deck – 3x15</li>
+          <li>Fondos en paralelas – 3x12</li>
+          <li>Extensión de tríceps en polea – 3x15</li>
+          <li>Press francés con mancuerna – 3x12</li>
+          <li>Plancha con elevación de piernas (3x30 seg)</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/Qtpr5sN.png" alt="Press banca inclinado" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 2</h3>
+    <p class="motivacion">"Nunca bajes la guardia."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Dominadas (asistidas si es necesario) – 4x8</li>
+          <li>Remo con mancuernas – 3x12</li>
+          <li>Jalón tras nuca – 3x12</li>
+          <li>Pull-over con polea alta – 3x15</li>
+          <li>Curl bíceps concentrado – 3x12</li>
+          <li>Curl martillo – 3x12</li>
+          <li>Plancha lateral (3x30 seg cada lado)</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/XT9V6Ar.png" alt="Dominadas asistidas" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 3</h3>
+    <p class="motivacion">"El dolor es temporal, la gloria es para siempre."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Sentadilla frontal – 4x10</li>
+          <li>Prensa inclinada – 3x12</li>
+          <li>Peso muerto rumano – 3x12</li>
+          <li>Zancadas con mancuernas – 3x20 pasos</li>
+          <li>Curl femoral – 3x15</li>
+          <li>Extensión de cuádriceps – 3x15</li>
+          <li>Elevación de talones – 4x20</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/gci9Ftk.png" alt="Sentadilla frontal" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 4</h3>
+    <p class="motivacion">"El esfuerzo de hoy es tu éxito de mañana."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press militar con mancuernas – 4x10</li>
+          <li>Elevaciones frontales – 3x15</li>
+          <li>Pájaros con mancuernas – 3x15</li>
+          <li>Remo al cuello con barra – 3x12</li>
+          <li>Encogimientos con barra – 4x15</li>
+          <li>Bicicleta + Crunch inverso + Plancha lateral (3 rondas)</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/6JZYvZT.png" alt="Press militar con mancuernas" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 5</h3>
+    <p class="motivacion">"Tu cuerpo es tu templo, cuídalo."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Circuito HIIT: 12 burpees, 25 sentadillas con salto, 20 flexiones, 12 dominadas, 30 mountain climbers (3 rondas)</li>
+          <li>Sentadillas con peso – 3x12</li>
+          <li>Peso muerto – 3x10</li>
+          <li>Press banca – 3x10</li>
+          <li>Remo – 3x12</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/eKk7JXN.png" alt="Burpees" />
+    </div>
+  </article>
+</section>
+<!-- Semana 3 -->
+<section class="semana" id="semana3">
+  <h2>Semana 3</h2>
+  <p class="motivacion">"Desafía tus límites cada día."</p>
+
+  <article>
+    <h3>Día 1</h3>
+    <p class="motivacion">"El esfuerzo es la llave al éxito."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press banca plano con mancuernas – 4x12</li>
+          <li>Press inclinado con barra – 3x10</li>
+          <li>Aperturas en cable – 3x15</li>
+          <li>Fondos en banco – 3x15</li>
+          <li>Extensión de tríceps en cuerda – 3x15</li>
+          <li>Press francés con barra – 3x12</li>
+          <li>Crunch abdominal con peso (3x20)</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/Qtpr5sN.png" alt="Press banca plano con mancuernas" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 2</h3>
+    <p class="motivacion">"La fuerza no viene de lo que puedes hacer, sino de superar lo que pensabas imposible."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Jalón tras nuca – 4x10</li>
+          <li>Remo con mancuernas a un brazo – 3x12</li>
+          <li>Pull-over en máquina – 3x15</li>
+          <li>Curl martillo – 3x15</li>
+          <li>Curl concentrado – 3x12</li>
+          <li>Plancha lateral con elevación de pierna (3x30 seg)</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/XT9V6Ar.png" alt="Jalón tras nuca" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 3</h3>
+    <p class="motivacion">"Cada gota de sudor vale la pena."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Sentadilla libre con pausa – 4x10</li>
+          <li>Prensa con pies juntos – 3x12</li>
+          <li>Peso muerto rumano – 3x12</li>
+          <li>Zancadas estáticas – 3x20 pasos</li>
+          <li>Curl femoral – 3x15</li>
+          <li>Extensión de cuádriceps – 3x15</li>
+          <li>Elevación de talones – 4x20</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/gci9Ftk.png" alt="Sentadilla con pausa" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 4</h3>
+    <p class="motivacion">"Tus límites están más lejos de lo que crees."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press Arnold – 4x10</li>
+          <li>Elevaciones laterales sentado – 3x15</li>
+          <li>Face pull – 3x15</li>
+          <li>Remo al mentón con barra Z – 3x12</li>
+          <li>Encogimientos en máquina – 4x15</li>
+          <li>Crunch + elevación de piernas – 3x15 cada uno</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/6JZYvZT.png" alt="Press Arnold" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 5</h3>
+    <p class="motivacion">"No pares hasta estar orgulloso."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Burpees – 3x12</li>
+          <li>Jumping squats – 3x15</li>
+          <li>Flexiones explosivas – 3x15</li>
+          <li>Dominadas – 3x8 (o asistidas)</li>
+          <li>Plancha con toque de hombros – 3x30 seg</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/eKk7JXN.png" alt="Burpees y HIIT" />
+    </div>
+  </article>
+</section>
+<!-- Semana 4 -->
+<section class="semana" id="semana4">
+  <h2>Semana 4</h2>
+  <p class="motivacion">"Transforma tu esfuerzo en resultados."</p>
+
+  <article>
+    <h3>Día 1</h3>
+    <p class="motivacion">"La última semana no es para aflojar, ¡es para cerrar fuerte!"</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press banca plano – 4x10</li>
+          <li>Press inclinado con mancuernas – 3x12</li>
+          <li>Aperturas con cable – 3x15</li>
+          <li>Fondos – 3x12</li>
+          <li>Extensión tríceps polea – 3x15</li>
+          <li>Crunch con peso – 3x20</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/Qtpr5sN.png" alt="Press banca plano" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 2</h3>
+    <p class="motivacion">"Ya aguantaste tanto… ahora ve por más."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Jalón al pecho – 4x10</li>
+          <li>Remo barra – 3x12</li>
+          <li>Pull-over – 3x15</li>
+          <li>Curl bíceps con barra – 3x12</li>
+          <li>Curl alternado – 3x12</li>
+          <li>Plancha frontal – 3x40 seg</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/XT9V6Ar.png" alt="Jalón al pecho" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 3</h3>
+    <p class="motivacion">"No eres el mismo de cuando empezaste. ¡Eres más fuerte!"</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Sentadilla – 4x10</li>
+          <li>Prensa – 3x12</li>
+          <li>Peso muerto – 3x12</li>
+          <li>Extensión de cuádriceps – 3x15</li>
+          <li>Curl femoral – 3x15</li>
+          <li>Elevación de talones – 4x20</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/gci9Ftk.png" alt="Sentadilla" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 4</h3>
+    <p class="motivacion">"El cuerpo consigue lo que la mente cree."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>Press militar – 4x10</li>
+          <li>Elevaciones laterales – 3x15</li>
+          <li>Face pulls – 3x15</li>
+          <li>Encogimientos – 3x20</li>
+          <li>Crunch lateral – 3x15</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/6JZYvZT.png" alt="Press militar" />
+    </div>
+  </article>
+
+  <article>
+    <h3>Día 5</h3>
+    <p class="motivacion">"Lo lograste. Pero esto es solo el comienzo."</p>
+    <div class="ejercicio">
+      <div>
+        <ul>
+          <li>HIIT 4 rondas: 15 burpees, 20 squats, 20 flexiones, 15 jumping jacks, 20 mountain climbers</li>
+          <li>Plancha frontal – 3x1 min</li>
+          <li>Estiramiento general</li>
+        </ul>
+      </div>
+      <img src="https://i.imgur.com/eKk7JXN.png" alt="HIIT final" />
+    </div>
+  </article>
+</section>
+
+<!-- TEMPORIZADOR -->
+<div class="temporizador">
+  <h3>Temporizador de Descanso</h3>
+  <div>
+    <button onclick="iniciarTemporizador(30)">30s</button>
+    <button onclick="iniciarTemporizador(60)">1m</button>
+    <button onclick="iniciarTemporizador(90)">1.5m</button>
+    <button onclick="detenerTemporizador()">Detener</button>
+  </div>
+  <div id="cuentaAtras">00:00</div>
+</div>
+
+</main>
+
+<footer>
+  <p>Rutina creada por Alan 💥 | Sigue firme, ¡vamos por más!</p>
+</footer>
+
+<script>
+  function mostrarSemana(num) {
+    document.querySelectorAll('.semana').forEach((s, i) => {
+      s.classList.toggle('active', i === num - 1);
+    });
+    document.querySelectorAll('.semana-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === num - 1);
+    });
+  }
+
+  let cuenta = null;
+  function iniciarTemporizador(segundos) {
+    clearInterval(cuenta);
+    let tiempo = segundos;
+    const cuentaAtras = document.getElementById("cuentaAtras");
+    const actualizar = () => {
+      let min = Math.floor(tiempo / 60);
+      let seg = tiempo % 60;
+      cuentaAtras.textContent = (min < 10 ? "0" : "") + min + ":" + (seg < 10 ? "0" : "") + seg;
+      if (tiempo <= 0) clearInterval(cuenta);
+      tiempo--;
+    };
+    actualizar();
+    cuenta = setInterval(actualizar, 1000);
+  }
+
+  function detenerTemporizador() {
+    clearInterval(cuenta);
+    document.getElementById("cuentaAtras").textContent = "00:00";
+  }
+</script>
+
+</body>
+</html>
